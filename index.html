@@ -649,6 +649,8 @@ $( document ).ready(function() {
               <input type="hidden" name="zip" value="none_10">
               <input type="hidden" name="country" value="none_11">
 
+              <input type="hidden" name="feetype" value="none_21">
+
             </form> 
 
 
@@ -716,9 +718,11 @@ $( document ).ready(function() {
         }else if(outer_ele2.val()){
             inner_ele .val(outer_ele2.val() )
         }
-
       }
-     
+     if (search_name=="amount"){
+            var inner_ele_another = $('#paypalform input[name=feetype]')
+            inner_ele_another .val(outer_ele2.text() )
+     }
 
 
     }
