@@ -563,6 +563,7 @@ $( document ).ready(function() {
                         <option data-discount=1 value="400">Full Delegate/Co-author 400EURO</option>
                         <option data-discount=1 value="350">Student 350EURO</option>
                         <option data-discount=1 value="400">Demonstration 400EURO</option>
+                        <option data-discount=1 value="0">VirtualAttendance 0</option>
 						<option data-discount=1 value="210">OneDayParticipation 210EURO</option>
                     </select>>
 
@@ -573,7 +574,13 @@ $( document ).ready(function() {
 					   
 					<label class="control-label">Registration Fees</label>
 
-					<div id="paypal-button-container"></div>
+                    <div id="paypal-button-container"></div>
+
+                    <div id="free-button-container" style="display:none;">
+                        
+                        <a class="btn btn-primary" onclick="freeSubmit();">Send</a>
+
+                    </div>
 
 
 				</div>
@@ -582,7 +589,54 @@ $( document ).ready(function() {
 		</div>
 		
 </div>
+<script type="text/javascript">
+    
+var listener_amount = document.getElementById("ip_amount");
 
+// listener_amount.addEventListener("click", function() {
+//     // var options = listener_amount.querySelectorAll("option:slected");
+//     if(typeof(options) === "undefined" || options.value==0)
+//     {
+//         addActivityItem();
+//     }
+// });
+
+listener_amount.addEventListener("change", function() {
+    if(listener_amount.value == 0)
+    {
+        addActivityItem();
+    }else{
+        deActivityItem();
+    }
+});
+function addActivityItem() {
+    console.log("free selected")
+    document.getElementById("paypal-button-container").style.display = "none";
+    document.getElementById("free-button-container").style.display = "block";
+}
+function deActivityItem() {
+    console.log("free selected")
+    document.getElementById("paypal-button-container").style.display = "block";
+    document.getElementById("free-button-container").style.display = "none";
+}
+function randstr(prefix)
+{
+    var rnd= Math.random().toString(36).replace('0.',prefix || '');
+    var rnd2= Math.random().toString(36).replace('0.','');
+
+    rnd =  rnd.toUpperCase();
+    rnd2 =  rnd2.toUpperCase();
+    return rnd+"-"+rnd2
+}
+function freeSubmit() {
+    console.log("free freeSubmit")
+    var paypal_ref_id=randstr("FREEID-")
+    var paypal_log_str=""
+    submit_google_form(paypal_ref_id , paypal_log_str )
+}
+
+
+</script>
 
 	<div class="loading js-loading is-hidden">
 		<div class="loading-spinner">
@@ -617,31 +671,31 @@ $( document ).ready(function() {
 <div  style="display:none;">
 
             <form  method="post"  id="paypalform" name="submit-to-google-sheet">
-              <input type="hidden" name="paypal_ref" value="none_paypal_ref">
-              <input type="hidden" name="paypal_logstr" value="none_paypal_logstr">
-              <input type="hidden" name="amount" value="0.01">
+              <input type="hidden" name="paypal_ref" value="">
+              <input type="hidden" name="paypal_logstr" value="">
+              <input type="hidden" name="amount" value="0.00">
 
-				<input type="hidden" name="useraddress" value="none_1">
+				<input type="hidden" name="useraddress" value="">
 
-              <input type="hidden" name="paper_id" value="none_paper_id">
+              <input type="hidden" name="paper_id" value="">
 
-              <input type="hidden" name="company" value="none_paper_id">
-              <input type="hidden" name="company2" value="none_paper_id">
+              <input type="hidden" name="company" value="">
+              <input type="hidden" name="company2" value="">
 
 
-              <input type="hidden" name="first_name" value="none_2">
-              <input type="hidden" name="last_name" value="none_3">
-              <input type="hidden" name="email" value="none_4">
-              <input type="hidden" name="night_phone_a" value="none_5">
+              <input type="hidden" name="first_name" value="">
+              <input type="hidden" name="last_name" value="">
+              <input type="hidden" name="email" value="">
+              <input type="hidden" name="night_phone_a" value="">
 
-              <input type="hidden" name="address1" value="none_6">
-              <input type="hidden" name="address2" value="none_7">
-              <input type="hidden" name="city" value="none_8">
-              <input type="hidden" name="state" value="none_9">
-              <input type="hidden" name="zip" value="none_10">
-              <input type="hidden" name="country" value="none_11">
+              <input type="hidden" name="address1" value="">
+              <input type="hidden" name="address2" value="">
+              <input type="hidden" name="city" value="">
+              <input type="hidden" name="state" value="">
+              <input type="hidden" name="zip" value="">
+              <input type="hidden" name="country" value="">
 
-              <input type="hidden" name="feetype" value="none_21">
+              <input type="hidden" name="feetype" value="">
 
             </form> 
 
