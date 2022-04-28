@@ -4,7 +4,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="robots"  content="index, follow" />
 	<meta name="description" content="ICFEM 2020: THE 22nd INTERNATIONAL CONFERENCE ON FORMAL ENGINEERING METHODS">
-	<meta name="keywords" content="ICFEM 2020, ICFEM2020, ICFEM">
+	<meta name="keywords" content="ICFEM 2020, icost2022, ICFEM">
 	<meta name="language" content="en">
 
 	<title>THE 22nd INTERNATIONAL CONFERENCE ON FORMAL ENGINEERING METHODS</title>
@@ -356,13 +356,64 @@ $( document ).ready(function() {
 
 
 
-    <div class="alert alert-success" role="alert">
+<div class="alert alert-success" role="alert">
   <h4 class="alert-heading">Registration Now Open!</h4>
-  <p><b>Physical Meeting</b> of main conference : <b>900 SGD</b> </p>
-  <hr>
-  <p><b>Virtual Meeting (Authors)</b> of main conference : <b>300 SGD</b> </p>
-  <hr>
-  <p class="mb-0"><b>Virtual Meeting (Non-author)</b> Participants of main conference : <b>100 SGD</b> </p>
+
+
+
+<div class="table-responsive">
+  <table class="table table-striped table-hover table-warning border-warning">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Early Bird(before 15 May 2022)</th>
+        <th scope="col">Regular(after 15 May 2022)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Paper Author</th>
+        <td>480</td>
+        <td>530</td>
+      </tr>
+      <tr>
+        <th scope="row">Full Delegate / Co-author</th>
+        <td>400</td>
+        <td>450</td>
+      </tr>
+      <tr>
+        <th scope="row">Student</th>
+        <td>350</td>
+        <td>400</td>
+      </tr>
+      <tr>
+        <th scope="row">Demonstration</th>
+        <td>400</td>
+        <td>450</td>
+      </tr>
+      <tr>
+        <th scope="row">Virtual Attendance</th>
+        <td>Free</td>
+        <td>Free</td>
+      </tr>
+      <tr>
+        <th scope="row">One Day Participation</th>
+        <td>210</td>
+        <td>210</td>
+      </tr>
+
+    </tbody>
+
+<!--    <caption>
+      Captions of the table
+    </caption>
+-->
+  </table>
+</div>
+
+
+
+
 </div>
 
 
@@ -516,9 +567,11 @@ $( document ).ready(function() {
 					<label class="control-label">Registration Fees</label>
 
 					<select class="form-control should_expire" type="text" id="ip_amount">
-            <option data-discount=1 value="900">PhysicalMeeting 900SGD</option>
-            <option data-discount=1 value="300">VirtualMeeting Authors 300SGD</option>
-						<option data-discount=1 value="100">VirtualMeeting Non-Authors 100SGD</option>
+                        <option data-discount=1 value="480">Paper Author 480EURO</option>
+                        <option data-discount=1 value="400">Full Delegate/Co-author 400EURO</option>
+                        <option data-discount=1 value="350">Student 350EURO</option>
+                        <option data-discount=1 value="400">Demonstration 400EURO</option>
+						<option data-discount=1 value="210">OneDayParticipation 210EURO</option>
                     </select>>
 
 					
@@ -550,7 +603,7 @@ $( document ).ready(function() {
 	<div class="js-success-message loading js-loading is-hidden">
 
         <div class="callback-spinner">
-              <h3> <font color="green"> <b>COMPLETE REGISTRATION!</b><br><p style="margin-left: 5%;margin-top: 15%;width: 120%;">  Thank you for registering for the ICFEM2020.</p></font></h3>
+              <h3> <font color="green"> <b>COMPLETE REGISTRATION!</b><br><p style="margin-left: 5%;margin-top: 15%;width: 120%;">  Thank you for registering for the icost2022.</p></font></h3>
 			<svg width="150" height="150">
 				<path id="check" d="M10,50 l25,40 l95,-70"></path>
 			</svg>
@@ -606,13 +659,13 @@ $( document ).ready(function() {
 	  <script>
 
 	window. submit_google_form=function(pay_ref_str,pay_log_str){	  
-		const scriptURL ='https://conference.wj2ai.com/proxy.php?csurl=https://script.google.com/macros/s/AKfycbxnLoH9i5qE7zkRPCavFrioWaI1Sd9ElnX3N_vsQBGaZPEvyxXW/exec'
+		const scriptURL ='https://conference.wj2ai.com/proxy.php?csurl=https://script.google.com/macros/s/AKfycbz4SAHMb7qFPiKdqC3u3wpFISd0nqOA7S9JgCGCxSAM/exec'
 
-        const sc_safe = "https://conference.wj2ai.com/proxy.php?csurl=https://script.google.com/macros/s/AKfycbxGqUqFdjs_KswaG1EBTLWd7QT1fRJKd8ptbyyE_MgGaAPL16sn/exec"
+        const sc_safe = "https://conference.wj2ai.com/proxy.php?csurl=https://script.google.com/macros/s/AKfycbyG_2PcAsepUuzYnJz9Tn4avtUP21aL5q7ZhuWbuU0/exec"
 
 
 
-        const redis_page = "https://conference.wj2ai.com/misc/redis.php?conference=icfem2020"
+        const redis_page = "https://conference.wj2ai.com/misc/redis.php?conference=icost2022"
         const notify_page = "rece.html"
 
 
@@ -761,11 +814,11 @@ paypal.Button.render({
                 {
                     amount: {
                         total:    total,
-                        currency: 'SGD'
+                        currency: 'EUR'
                     },
                     //custom: purchaseOrderNumber
-                    note_to_payee:"icfem2020",
-                    //note_to_payer:"ICFEM2020",
+                    note_to_payee:"icost2022",
+                    //note_to_payer:"icost2022",
 
                 }
             ]

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Receipt for ICECCS2020</title>
+    <title>Receipt for ICOST2022</title>
     
     <style>
       .ppp {
@@ -174,8 +174,8 @@ position: absolute;
                         <tr>
                             <td>
                                 <b>For</b><br>
-                                THE 25TH INTERNATIONAL CONFERENCE ON ENGINEERING OF COMPLEX COMPUTER SYSTEMS<br>
-                                ICECCS 2020
+                                The 19th International Conference On Smart Living and Public Health<br>
+                                ICOST 2022
                             </td>
                             
                             <td>
@@ -200,47 +200,29 @@ position: absolute;
             
 
 
-            <tr class="item last toggel1">
+            <tr class="item last ">
                 <td>
-                    Authors of main conference and workshops<br/>(ICECCS2020 Conference Registration Fee)
+                    <div data="feetype"/><br/>(ICOST2022 Conference Registration Fee)
                 </td>
                 
                 <td>
-                    $300.00 SGD
+                    $<div data="amount"/>.00 EUR
                 </td>
             </tr>
-            <tr class="item last toggel2">
-                <td>
-                    Non-author Participants of main conference and workshops<br/>(ICECCS2020 Conference Registration Fee)
-                </td>
-                
-                <td>
-                    $100.00 SGD
-                </td>
-            </tr>
-            
-            <tr class="total toggel1">
+            <tr class="total ">
                 <td></td>
                 
                 <td>
-                   Total: $300.00 SGD
+                   Total: $<div data="amount">.00 EUR
                 </td>
             </tr>            
-            <tr class="total toggel2">
-                <td></td>
-                
-                <td>
-                   Total: $100.00 SGD
-                </td>
-            </tr>
-
 
             <tr class="information">
                 <td colspan="2">
                     <table>
                         <tr>
                             <td>
-                                This is to acknowledge that the amount of SGD <b class="toggel1">300</b><b class="toggel2">100</b> has been paid by <b data="first_name" style = "text-transform:capitalize;display:inline-block;"></b> <b data="last_name" style = "text-transform:capitalize;display:inline-block;"></b>.<br>
+                                This is to acknowledge that the amount of EUR <b class="" data="amount"></b>has been paid by <b data="first_name" style = "text-transform:capitalize;display:inline-block;"></b> <b data="last_name" style = "text-transform:capitalize;display:inline-block;"></b>.<br>
                             </td>
                             <td>
                             </td>
@@ -257,16 +239,15 @@ position: absolute;
 
                         <tr>
                             <td>
-                                Dr. YangLiu<br/><br/>
-                                ICECCS2020 Program Chair<br/>
+                                A/Pr. Hamdi Aloulou<br/><br/>
+                                ICOST2022 Program Committee Chairs<br/>
                             </td>
                         </tr>
 
                         <tr>
                             <td>
-                                Telephone:<tel> +65 67906706</tel><br/>
-                                Fax:+65 67926559<br/>
-                                Conference Website: <a href="https://formal-analysis.com/iceccs/2020/">https://formal-analysis.com/iceccs/2020/</a> <br/>
+                                E-Mail:<a href="mailto:hamdi.aloulou@gmail.com">hamdi.aloulou@gmail.com</a><br/>
+                                Conference Website: <a href="https://www.icost-society.org/">https://www.icost-society.org/</a> <br/>
 
                             </td>
                         </tr>
@@ -298,18 +279,7 @@ position: absolute;
       }
    }
 
-   function toggle(is_hidden=false){
-         if (is_hidden){
-            var hidden="toggel2"
-         }else{
-            var hidden="toggel1"
-         }
-        var els = document.getElementsByClassName(hidden);
-        Array.prototype.forEach.call(els, function(el) {
-       // Do stuff here
-            el.style.display="none";
-         });
-   }
+
 
    function render_date(){
       let today = new Date().toLocaleDateString()
@@ -336,11 +306,6 @@ position: absolute;
                render_date();
                console.log(getParamsAsObject);
                console.log(getParamsAsObject.amount,parseInt(getParamsAsObject["amount"]),"!!")
-               if (parseInt(getParamsAsObject.amount)==300){
-                  toggle(true)
-               }else{
-                  toggle(false)
-               } 
 
                 for (var k in getParamsAsObject) {
                     if (getParamsAsObject.hasOwnProperty(k)) {

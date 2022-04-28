@@ -167,7 +167,7 @@ position: absolute;
             
 
 
-     <tr class="information">
+            <tr class="information">
                 <td colspan="2">
                     <table>
                         <tr>
@@ -198,63 +198,29 @@ position: absolute;
             </tr>
             
 
-
-            <tr class="item last toggel2">
+            <tr class="item last ">
                 <td>
-                    Virtual Meeting (Authors) of main conference and workshops<br/>(ICFEM2020 Conference Registration Fee)
-                </td>
-                <td>
-                    $300.00 SGD
-                </td>
-            </tr>
-            <tr class="item last toggel1">
-                <td>
-                    Virtual Meeting (Non-author) Participants of main conference and workshops<br/>(ICFEM2020 Conference Registration Fee)
+                    <div data="feetype"/><br/>(ICOST2022 Conference Registration Fee)
                 </td>
                 
                 <td>
-                    $100.00 SGD
+                    $<div data="amount"/>.00 EUR
                 </td>
             </tr>
-            <tr class="item last toggel3">
-                <td>
-                    Physical Meeting Participants of main conference and workshops<br/>(ICFEM2020 Conference Registration Fee)
-                </td>
-                
-                <td>
-                    $900.00 SGD
-                </td>
-            </tr>
-            
-            <tr class="total toggel2">
+            <tr class="total ">
                 <td></td>
                 
                 <td>
-                   Total: $300.00 SGD
+                   Total: $<div data="amount"/>.00 EUR
                 </td>
             </tr>            
-            <tr class="total toggel1">
-                <td></td>
-                
-                <td>
-                   Total: $100.00 SGD
-                </td>
-            </tr>
-            <tr class="total toggel3">
-                <td></td>
-                
-                <td>
-                   Total: $900.00 SGD
-                </td>
-            </tr>
-
 
             <tr class="information">
                 <td colspan="2">
                     <table>
                         <tr>
                             <td>
-                                This is to acknowledge that the amount of SGD <b class="toggel2">300</b><b class="toggel1">100</b><b class="toggel3">900</b> has been paid by <b data="first_name" style = "text-transform:capitalize;display:inline-block;"></b> <b data="last_name" style = "text-transform:capitalize;display:inline-block;"></b>.<br>
+                                This is to acknowledge that the amount of EUR <b class="" data="amount"></b>has been paid by <b data="first_name" style = "text-transform:capitalize;display:inline-block;"></b> <b data="last_name" style = "text-transform:capitalize;display:inline-block;"></b>.<br>
                             </td>
                             <td>
                             </td>
@@ -271,16 +237,15 @@ position: absolute;
 
                         <tr>
                             <td>
-                                Dr. YangLiu<br/><br/>
-                                ICFEM2020 Program Chair<br/>
+                                A/Pr. Hamdi Aloulou<br/><br/>
+                                ICOST2022 Program Committee Chairs<br/>
                             </td>
                         </tr>
 
                         <tr>
                             <td>
-                                Telephone:<tel> +65 67906706</tel><br/>
-                                Fax:+65 67926559<br/>
-                                Conference Website: <a href="https://formal-analysis.com/icfem/2020/">https://formal-analysis.com/icfem/2020/</a> <br/>
+                                E-Mail:<a href="mailto:hamdi.aloulou@gmail.com">hamdi.aloulou@gmail.com</a><br/>
+                                Conference Website: <a href="https://www.icost-society.org/">https://www.icost-society.org/</a> <br/>
 
                             </td>
                         </tr>
@@ -290,6 +255,7 @@ position: absolute;
                 </td>
             </tr>
             
+
 
 
         </table>
@@ -312,26 +278,6 @@ position: absolute;
       }
    }
 
-   function toggle(amount_val){
-       console.log(amount_val<=300,amount_val>100,amount_val>=900 ,"===!<<>>>")
-       if (amount_val<=100){
-            var hidden="toggel1"
-       }else if (amount_val>=900){
-            var hidden="toggel3"
-       }
-       else{
-            var hidden="toggel2"
-       }
-       ["toggel1","toggel2","toggel3"] .forEach(ele =>{
-           if (ele !=hidden){
-           console.log("find ...", ele)
-            var els = document.getElementsByClassName(ele);
-            Array.prototype.forEach.call(els, function(el) {
-                el.style.display="none";
-             });
-           }
-        })
-   }
 
    function render_date(){
       let today = new Date().toLocaleDateString()
@@ -341,34 +287,28 @@ position: absolute;
 
 
 
-        var btnPrint=function () {
-            $("#dvContainer").show();
-//    $("#printarea").show();
-    window.print();
+    var btnPrint=function () {
+        $("#dvContainer").show();
+        //    $("#printarea").show();
+            window.print();
 
-        }
+    }
 
       $( document ).ready(
-            function(){
-               render_date();
-               console.log(getParamsAsObject);
-               console.log(getParamsAsObject.amount,parseInt(getParamsAsObject["amount"]),"!!")
-                toggle(parseInt(getParamsAsObject.amount)) 
-/*               if (parseInt(getParamsAsObject.amount)==300){
-                  toggle(true)
-               }else{
-                  toggle(false)
-               } */
+        function(){
+           render_date();
+           console.log(getParamsAsObject);
+           console.log(getParamsAsObject.amount,parseInt(getParamsAsObject["amount"]),"!!")
 
-                for (var k in getParamsAsObject) {
-                    if (getParamsAsObject.hasOwnProperty(k)) {
-                       var value = getParamsAsObject[k];
-                       render_field(k,value)
-                    }
+            for (var k in getParamsAsObject) {
+                if (getParamsAsObject.hasOwnProperty(k)) {
+                   var value = getParamsAsObject[k];
+                   render_field(k,value)
                 }
+            }
 
-               btnPrint()
-            });
+           btnPrint()
+        });
     </script>
 
 
